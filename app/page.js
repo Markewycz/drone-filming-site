@@ -88,14 +88,8 @@ export default function Page() {
 
   const videos = useMemo(
     () => [
-      {
-        title: 'Showreel 2025',
-        embed: 'https://player.vimeo.com/video/76979871?h=8272103f6e',
-      },
-      {
-        title: 'Commercial: Coastal Resort',
-        embed: 'https://www.youtube.com/embed/Scxs7L0vhZ4',
-      },
+      { title: 'Festival', src: '/hero-video-festival.mp4' },
+      { title: 'Street', src: '/hero-video-street.mp4' },
     ],
     []
   );
@@ -132,8 +126,7 @@ export default function Page() {
 
   const hero = useMemo(
     () => ({
-      src: 'https://cdn.coverr.co/videos/coverr-drone-view-of-a-winding-road-1670/1080p.mp4',
-      poster: '/hero-poster.jpg',
+      src: '/hero-bg-venice.mp4',
     }),
     []
   );
@@ -244,7 +237,6 @@ export default function Page() {
           ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover"
           src={hero.src}
-          poster={hero.poster}
           autoPlay
           muted
           loop
@@ -254,13 +246,14 @@ export default function Page() {
         <div className="relative z-10 h-full">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex items-end sm:items-center pb-10 sm:pb-0">
             <div className="max-w-2xl">
-              <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight leading-tight text-white drop-shadow-lg">
                 Aerial Filmmaking & Drone Services
               </h1>
-              <p className="mt-4 text-base sm:text-lg">
+              <p className="mt-4 text-base sm:text-lg text-neutral-200 drop-shadow">
                 Premium drone cinematography for commercials, real estate,
                 events and branded content across Denmark and the EU.
               </p>
+
               <div className="mt-8 flex gap-3">
                 <a
                   href="#work"
@@ -270,13 +263,13 @@ export default function Page() {
                 </a>
                 <a
                   href="#quote"
-                  className="inline-flex items-center rounded-xl border border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                  className="inline-flex items-center rounded-xl border text-neutral-200 hover:text-neutral-900 border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:text-neutral-200 dark:hover:bg-neutral-900"
                 >
                   Get a Quote
                 </a>
                 <button
                   type="button"
-                  className="inline-flex items-center rounded-xl border border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                  className="inline-flex items-center rounded-xl border text-neutral-200 hover:text-neutral-900 border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:text-neutral-200 dark:hover:bg-neutral-900"
                   onClick={() => {
                     const v = videoRef.current;
                     if (!v) return;
@@ -325,13 +318,14 @@ export default function Page() {
               key={i}
               className="aspect-video overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-sm"
             >
-              <iframe
-                title={v.title}
-                src={v.embed}
-                className="h-full w-full"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              <video
+                src={v.src}
+                controls
+                loop
+                muted
+                autoPlay
+                playsInline
+                className="h-full w-full object-cover"
               />
             </div>
           ))}
