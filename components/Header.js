@@ -10,7 +10,10 @@ export default function Header({ dark, setDark, mobileOpen, setMobileOpen }) {
     <header className="sticky top-0 z-50 backdrop-blur border-b border-neutral-200 dark:border-neutral-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <a href="#home" className="font-semibold tracking-tight text-lg">
+          <a
+            href="#home"
+            className="font-semibold tracking-tight text-lg text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-fuchsia-500"
+          >
             NordSky Aerials
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm">

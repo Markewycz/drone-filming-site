@@ -17,7 +17,7 @@ export default function Hero({ hero, videoRef, heroPaused, setHeroPaused }) {
         playsInline
         preload="metadata"
       />
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-neutral-950/80 via-neutral-900/20 to-neutral-950/80" />
       <div className="relative z-10 h-full">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full flex items-end sm:items-center pb-10 sm:pb-0">
           <div className="max-w-2xl">
