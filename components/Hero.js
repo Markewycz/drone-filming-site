@@ -25,7 +25,8 @@ export default function Hero({ hero, videoRef, heroPaused, setHeroPaused }) {
               Aerial Filmmaking & Drone Services
             </h1>
             <p className="mt-4 text-base sm:text-lg text-neutral-200 drop-shadow">
-              Premium drone cinematography for commercials, real estate, events and branded content across Denmark and the EU.
+              Premium drone cinematography for commercials, real estate, events
+              and branded content across Denmark and the EU.
             </p>
             <div className="mt-8 flex gap-3">
               <a
@@ -36,13 +37,13 @@ export default function Hero({ hero, videoRef, heroPaused, setHeroPaused }) {
               </a>
               <a
                 href="#quote"
-                className="inline-flex items-center rounded-xl border border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                className="inline-flex items-center rounded-xl border text-white border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-900"
               >
                 Get a Quote
               </a>
               <button
                 type="button"
-                className="inline-flex items-center rounded-xl border border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                className="inline-flex items-center rounded-xl border text-white border-neutral-300 dark:border-neutral-700 px-4 py-2 text-sm font-medium hover:bg-neutral-100 hover:text-neutral-900 dark:hover:bg-neutral-900"
                 onClick={() => {
                   const v = videoRef.current;
                   if (!v) return;
